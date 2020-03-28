@@ -1,15 +1,15 @@
 package sample
 
-expect class Sample() {
-    fun checkMe(): Int
-}
+import kotlinx.benchmark.*
 
-expect object Platform {
-    val name: String
-}
 
-fun hello(): String = "Hello from ${Platform.name}"
-
-fun main() {
-    println(hello())
+@State(Scope.Benchmark)
+@OutputTimeUnit(BenchmarkTimeUnit.MILLISECONDS)
+@Measurement(time = 1, timeUnit = BenchmarkTimeUnit.SECONDS)
+@BenchmarkMode(Mode.Throughput)
+class Sample {
+    @Benchmark
+    fun main() {
+        2+7
+    }
 }
