@@ -1,0 +1,8 @@
+{
+  "resources":[
+    {"pattern":"\\QMETA-INF/BenchmarkList\\E"}, 
+    {"pattern":"\\QMETA-INF/CompilerHints\\E"}, 
+    {"pattern":"\\Qjmh.properties\\E"}
+  ],
+  "bundles":[]
+}

@@ -13,3 +13,5 @@ class Sample {
         2+7
     }
 }
+
+@TargetClass(className = "")

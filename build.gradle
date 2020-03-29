@@ -9,7 +9,7 @@ apply plugin: 'com.palantir.graal'
 graal {
     mainClass 'org.openjdk.jmh.Main'
     outputName 'hello-world'
-    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces -H:ReflectionConfigurationFiles=./graal-native-image-conf/reflect-config.json -H:ResourceConfigurationFiles=./graal-native-image-conf/resource-config.json'
+    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces -H:ReflectionConfigurationFiles=.\\graal-native-image-conf\\reflect-config.json -H:ResourceConfigurationFiles=.\\graal-native-image-conf\\resource-config.json'
 }
 
 allOpen {
