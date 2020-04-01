@@ -49,6 +49,9 @@ kotlin {
             dependencies {
                 implementation kotlin('stdlib-common')
                 implementation "org.jetbrains.kotlinx:kotlinx.benchmark.runtime:0.2.0-dev-8"
+                // https://mvnrepository.com/artifact/com.oracle.substratevm/svm-hosted-native-windows-amd64
+                compileOnly 'com.oracle.substratevm:svm:19.2.1'
+
             }
         }
         commonTest {
@@ -61,6 +64,9 @@ kotlin {
             dependencies {
                 implementation kotlin('stdlib')
                 implementation "org.jetbrains.kotlinx:kotlinx.benchmark.runtime-jvm:0.2.0-dev-8"
+                // https://mvnrepository.com/artifact/com.oracle.substratevm/svm-hosted-native-windows-amd64
+                compileOnly 'com.oracle.substratevm:svm:19.2.1'
+
             }
         }
         jsMain {
