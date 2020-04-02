@@ -1,11 +1,14 @@
 package bench.benchs
 
-class TestBench : BaseBench {
+import bench.benchmarker.Blackhole
+
+class PrimalNumbersBench : BaseBench {
     override val name: String = "Primal"
     override val repeats: Int = 1000
-    override fun run(): Int {
+    override val enabled = true
+    override fun run(blackhole: Blackhole) {
         var count = 0
-        for (i in 2..3000) {
+        for (i in 2..10000) {
             var flag = true
             for (j in 2 until i) {
                 if (i % j == 0) {
@@ -15,6 +18,6 @@ class TestBench : BaseBench {
             }
             if (flag) count++
         }
-        return count
+        blackhole.consume(count)
     }
 }

@@ -5,9 +5,9 @@ plugins {
 
 apply plugin: 'com.palantir.graal'
 graal {
-    mainClass 'org.openjdk.jmh.Main'
+    mainClass 'bench.benchmarker.BenchmarkerKt'
     outputName 'hello-world'
-    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces -H:ReflectionConfigurationFiles=.\\graal-native-image-conf\\reflect-config.json -H:ResourceConfigurationFiles=.\\graal-native-image-conf\\resource-config.json'
+    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces'
 }
 
 repositories {
@@ -26,7 +26,15 @@ version '0.0.1'
 apply plugin: 'maven-publish'
 
 kotlin {
-    jvm()
+    jvm() {
+        withJava()
+        jvmJar {
+            manifest {
+                attributes 'Main-Class': 'bench.benchmarker.BenchmarkerKt'
+            }
+            from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+        }
+    }
     js {
         browser {
         }
@@ -65,7 +73,7 @@ kotlin {
 
 }
 
-nativeImage.setJarFile(file(".\\build\\benchmarks\\jvm\\jars\\untitled-jvm-jmh-0.0.1.jar"))
+nativeImage.setJarFile(file(".\\build\\libs\\untitled-jvm-0.0.1.jar"))
 
 wrapper {
     gradleVersion = "5.3.1"

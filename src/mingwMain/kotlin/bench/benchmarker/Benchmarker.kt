@@ -1,30 +1,27 @@
 package bench.benchmarker
 
-import bench.benchs.BaseBench
-import bench.benchs.TestBench
+import bench.benchs.*
 import kotlin.system.getTimeNanos
 
 
 class Benchmarker {
-    private fun getAllBenchmarks(): List<BaseBench> {
-        return listOf<BaseBench>(TestBench())
-    }
-
     fun main() {
         var timeStartMini: Long
         var timeStopMini: Long
         var timeStartBench: Long
         var timeStopBench: Long
 
-        val benchs = getAllBenchmarks()
-        for (bench in benchs) {
+        val blackhole = Blackhole()
+
+        for (bench in bencmarks) {
+            if (!bench.enabled) continue
             val results = Array<Long>(bench.repeats) { 0 }
 
             var s = 0
             timeStartBench = getTimeNanos()
             while (s < bench.repeats) {
                 timeStartMini = getTimeNanos()
-                bench.run()
+                bench.run(blackhole)
                 timeStopMini = getTimeNanos()
                 results[s] = timeStopMini - timeStartMini
                 ++s
