@@ -5,7 +5,7 @@ import bench.benchmarker.Blackhole
 class StringBench : BaseBench {
     override val name: String = "StringBench"
     override val repeats: Int = 1000
-    override val enabled = true
+    override val enabled = false
     override fun run(blackhole: Blackhole) {
         var res = ""
         for (i in 0..10000) {

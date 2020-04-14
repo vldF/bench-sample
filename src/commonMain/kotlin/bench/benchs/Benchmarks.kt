@@ -1,3 +1,10 @@
 package bench.benchs
 
-val bencmarks = listOf<BaseBench>(PrimalNumbersBench(), RandNumsSum(), StringBench(), ListAddBench())
+val benchmarks = listOf(
+    PrimalNumbersBench(),
+    RandNumsSum(),
+    StringBench(),
+    ListAddBench(),
+    SinCalcBench(),
+    SinCalcMultiBench()
+)

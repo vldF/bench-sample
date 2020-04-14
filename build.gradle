@@ -7,7 +7,7 @@ apply plugin: 'com.palantir.graal'
 graal {
     mainClass 'bench.benchmarker.BenchmarkerKt'
     outputName 'hello-world'
-    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces'
+    option '-H:FallbackThreshold=0 -H:+ReportExceptionStackTraces -R:+PrintGC'
 }
 
 repositories {
@@ -33,12 +33,6 @@ kotlin {
                 attributes 'Main-Class': 'bench.benchmarker.BenchmarkerKt'
             }
             from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-        }
-    }
-    js {
-        browser {
-        }
-        nodejs {
         }
     }
     // For ARM, should be changed to iosArm32 or iosArm64
@@ -74,8 +68,21 @@ kotlin {
 }
 
 nativeImage.setJarFile(file(".\\build\\libs\\untitled-jvm-0.0.1.jar"))
+nativeImage.dependsOn(jvmJar)
 
 wrapper {
     gradleVersion = "5.3.1"
     distributionType = "ALL"
+}
+
+configure(jvmJar) {
+    group = "Benchmarks"
+}
+
+configure(nativeImage) {
+    group = "Benchmarks"
+}
+
+configure(mingwMainBinaries) {
+    group = "Benchmarks"
 }

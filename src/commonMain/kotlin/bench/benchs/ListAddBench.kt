@@ -1,6 +1,7 @@
 package bench.benchs
 
 import bench.benchmarker.Blackhole
+import kotlin.random.Random
 
 class ListAddBench : BaseBench {
     override val name: String = "listAdd"
@@ -10,7 +11,7 @@ class ListAddBench : BaseBench {
     override fun run(blackhole: Blackhole) {
         val res = mutableListOf<Int>()
         for (i in 0..100000)
-            res.add(i)
+            res.add(Random.nextInt())
 
         blackhole.consume(res)
     }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
+  <component name="ExternalSystem" externalSystemModuleType="sourceSet" />
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="JavaScript " allPlatforms="JS []" useProjectSettings="false" isTestModule="true" externalProjectId="untitled">
         <dependsOnModuleNames>untitled:commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>com.example.untitled.commonMain</sourceSet>
           <sourceSet>com.example.untitled.jsMain</sourceSet>
           <sourceSet>com.example.untitled.commonTest</sourceSet>
+          <sourceSet>com.example.untitled.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>

@@ -7,7 +7,6 @@ class PrimalNumbersBench : BaseBench {
     override val repeats: Int = 1000
     override val enabled = true
     override fun run(blackhole: Blackhole) {
-        var count = 0
         for (i in 2..10000) {
             var flag = true
             for (j in 2 until i) {
@@ -16,8 +15,9 @@ class PrimalNumbersBench : BaseBench {
                     break
                 }
             }
-            if (flag) count++
+            if (flag) {
+                blackhole.consume(i)
+            }
         }
-        blackhole.consume(count)
     }
 }
