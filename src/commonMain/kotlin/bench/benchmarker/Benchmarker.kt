@@ -16,7 +16,10 @@ class Benchmarker {
             }
 
         for (bench in benchmarksToRun) {
-            if (!bench.enabled) continue
+            if (!bench.enabled && enabled) continue
+
+            Utils.runGC()
+
             val results = Array<Long>(bench.repeats) { 0 }
 
             var s = 0

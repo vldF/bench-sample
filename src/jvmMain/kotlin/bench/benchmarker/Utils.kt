@@ -18,5 +18,9 @@ actual class Utils {
         private fun createDirIfNotExist(bench: String) {
             File("./bench/$bench").mkdirs()
         }
+
+        actual fun runGC() {
+            System.gc()
+        }
     }
 }

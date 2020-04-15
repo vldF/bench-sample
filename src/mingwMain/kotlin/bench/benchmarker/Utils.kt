@@ -25,5 +25,8 @@ actual class Utils {
             mkdir("./bench/$bench")
         }
 
+        actual fun runGC() {
+            kotlin.native.internal.GC.collect()
+        }
     }
 }

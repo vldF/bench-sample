@@ -9,5 +9,7 @@ expect class Utils {
         fun getPlatform(): String
 
         fun writeCsv(experimentResult: List<OneTurnResult>, benchName: String)
+
+        fun runGC()
     }
 }
