@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="untitled-js-0.0.1">
-    <output-path>C:\Users\vladi\IdeaProjects\untitled\build\libs</output-path>
-    <root id="archive" name="untitled-js-0.0.1.jar">
-      <element id="module-output" name="com.example.untitled.jsMain" />
-    </root>
-  </artifact>
-</component>
