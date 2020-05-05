@@ -57,6 +57,7 @@ class Benchmarker {
 }
 
 fun main() {
+    //todo убрать статики шлишние
     println("Select tests (enter tasks number, separated by space):")
     println(benchmarks.mapIndexed { n, bench -> "$n ${bench.name} [${if (bench.enabled) "+" else "-"}]" }.joinToString("\n"))
     println("ALL: Run all tests")

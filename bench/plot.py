@@ -19,7 +19,8 @@ def get_files():
 
     return res
 
-
+# Edit this block of code if you would to plot diagrams for other platforms
+# (for example, KN with another version)
 def get_platform_name(dir: str):
     if dir.startswith("Java"):
         return "HotSpot"
