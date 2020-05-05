@@ -3,7 +3,7 @@
 
 ## Installation
 1. You need to install [Windows SDK](https://www.microsoft.com/en-us/download/details.aspx?id=8442)
-2. Don't forget to install JDK. This benchmark works great with OpenJDK-12.0.2
+2. Don't forget to install JDK. This benchmark works great with jdk 11
 3. Clone this repo
 4. If you would to plot benchmark results, you should to install [python3] (https://python.org) and do next:
 ```
